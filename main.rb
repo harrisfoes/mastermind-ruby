@@ -1,7 +1,5 @@
-puts "This is a Mastermind Game"
-puts "Can you break the code?"
 
-CODE_ELEMENTS = ['r','g','b','y'].freeze
+CODE_ELEMENTS = ['r','g','b','y','m','c'].freeze
 CODE_LENGTH = 4
 TRIES_LIMIT = 10 
 CORRECT_GUESS = 'XXXX'.freeze
@@ -39,17 +37,15 @@ def evaluate_guess(guess, answer)
       end
     end 
   end
-  result
+  result.join("")
 end
 
 def guess_correct?(eval)
   eval == 'XXXX' ? true : false 
 end
 
-puts "This is the secret code"
+# game section
 secret_code =  generate_code()
-#p secret_code
-
 tries = 1 
 eval = ''
 
@@ -57,7 +53,7 @@ until tries == TRIES_LIMIT or guess_correct?(eval) do
   p "Your guess: "
   guess = gets.chomp
   
-  eval = evaluate_guess(guess, secret_code).join("")
+  eval = evaluate_guess(guess, secret_code)
 
   p "Guess number #{tries}, guess: #{guess} result: #{eval}"
 
@@ -72,7 +68,15 @@ end
 
 p "The answer is #{secret_code.join("")}"
 
+#TODO, store guesses tries and results in a hash
+#refactor to enable computer player
 
-
-
-
+# if computer player
+#   user will provide secret code
+#   computer will supply guesses
+#
+# if user player
+#   computer will generate secret code
+#   player will supply guesses
+#
+#   keep it simple!
