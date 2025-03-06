@@ -41,7 +41,7 @@ def evaluate_guess(guess, answer)
 end
 
 def guess_correct?(eval)
-  eval == 'XXXX' ? true : false 
+  eval == CORRECT_GUESS ? true : false 
 end
 
 # game section
@@ -123,8 +123,6 @@ def get_player_made_code()
     puts "Please select a four-letter combination of [r,g,b,y,m,c]"
   end
 end
-#TODO, store guesses tries and results in a hash
-#refactor to enable computer player
 
 # if computer player
 #   user will provide secret code
