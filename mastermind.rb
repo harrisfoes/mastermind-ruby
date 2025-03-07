@@ -31,7 +31,6 @@ class Mastermind
         answer_used[idx] = true
       end
     end
-    result
 
     guess.chars.each_with_index do | guess, idx|
       next if guess_used[idx]
@@ -49,6 +48,14 @@ class Mastermind
 
   def guess_correct?(eval)
     eval == CORRECT_GUESS ? true : false
+  end
+
+  def display()
+    #TODO display the guesses, tries and eval so far
+  end
+
+  def add_guess()
+    #TODO add a guess, maybe it can be added to guess then => eval 
   end
 
 end

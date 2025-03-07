@@ -24,7 +24,7 @@ def evaluate_guess(guess, answer)
       answer_used[idx] = true
     end
   end
-  result
+  #result
 
   guess.chars.each_with_index do | guess, idx|
     next if guess_used[idx]
@@ -60,6 +60,7 @@ def user_plays()
   puts "You have #{TRIES_LIMIT} tries"
 
   until tries == TRIES_LIMIT or guess_correct?(eval) do
+    #TODO: Get player guess with validation
     p "Your guess: "
     guess = gets.chomp
     
