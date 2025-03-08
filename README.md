@@ -30,7 +30,8 @@ codebreaker.rb
 ## Game details:
 
 ``` ruby
-colors accepted = [r,g,b,y,m,c] : char
-tries allowed = 10
+colors_accepted = [r,g,b,y,m,c] : char
+
+tries_allowed = 10
 ```
 
